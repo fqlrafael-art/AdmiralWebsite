@@ -4,25 +4,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admiral Labs - Engineering AI Unfair Advantage for Industry Leaders</title>
-  <meta name="description" content="Admiral Labs is Engineering AI Unfair Advantage for Industry Leaders. Serving Manufacturing, Commodities, Construction, and Defense industries.">
+  <title>Admiral Labs</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
     rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
-      background: #000000;
-      color: #ffffff;
-      overflow-x: hidden;
-      overflow-y: auto;
-      scroll-behavior: smooth;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: #000000;
+      overflow: hidden;
+    }
+
+    .container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .ascii-canvas {
@@ -32,321 +38,89 @@
       color: #ffffff;
       text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     }
-
-    .military-grid {
-      /* Grid removed */
-    }
-
-    .glow-text {
-      text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-    }
-
-    .border-military {
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .mono-caps {
-      font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', 'Courier New', monospace;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .industry-text {
-      font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', 'Courier New', monospace;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: #999999;
-      font-size: 0.875rem;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    .industry-cell:hover .industry-text {
-      color: #ffffff;
-    }
-
-    /* Mobile styles */
-    @media (max-width: 768px) {
-      .mobile-sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 2rem 1.5rem;
-      }
-
-      .mobile-sidebar h2 {
-        font-size: 0.875rem;
-        margin-bottom: 1rem;
-      }
-
-      .mobile-sidebar nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-      }
-
-      .mobile-sidebar nav a {
-        font-size: 0.75rem;
-        padding: 0.5rem 1rem;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 4px;
-      }
-
-      .mobile-main {
-        margin-left: 0 !important;
-      }
-
-      .mobile-hero {
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
-
-      .mobile-title {
-        font-size: 2.5rem !important;
-        margin-top: -2cm !important;
-      }
-    }
   </style>
 </head>
 
 <body>
-
-  <!-- Left Sidebar -->
-  <div class="fixed left-0 top-0 h-screen w-64 bg-black border-r border-white border-opacity-20 z-30 flex flex-col justify-center px-8 py-12 md:flex hidden">
-    <div class="space-y-8">
-      <!-- Subtitle -->
-      <h2 class="text-lg font-light tracking-tight leading-tight" style="font-family: 'JetBrains Mono', ui-monospace, 'Courier New', monospace;">
-        Engineering AI Unfair Advantage for Industry Leaders
-      </h2>
-
-      <!-- Industries List -->
-      <nav class="space-y-4">
-        <a href="#" class="block industry-text hover:text-white transition-colors duration-300">
-          Manufacturing
-        </a>
-        <a href="#" class="block industry-text hover:text-white transition-colors duration-300">
-          Commodities
-        </a>
-        <a href="#" class="block industry-text hover:text-white transition-colors duration-300">
-          Construction
-        </a>
-        <a href="#" class="block industry-text hover:text-white transition-colors duration-300">
-          Defense
-        </a>
-      </nav>
-    </div>
-  </div>
-
-  <!-- Mobile Sidebar (visible only on mobile) -->
-  <div class="mobile-sidebar bg-black z-30 md:hidden">
-    <h2 class="text-sm font-light tracking-tight leading-tight text-center mb-3" style="font-family: 'JetBrains Mono', ui-monospace, 'Courier New', monospace;">
-      Engineering AI Unfair Advantage for Industry Leaders
-    </h2>
-    <nav class="flex flex-wrap justify-center gap-2">
-      <a href="#" class="industry-text hover:text-white transition-colors duration-300 text-xs px-3 py-2 bg-white bg-opacity-5 rounded">
-        Manufacturing
-      </a>
-      <a href="#" class="industry-text hover:text-white transition-colors duration-300 text-xs px-3 py-2 bg-white bg-opacity-5 rounded">
-        Commodities
-      </a>
-      <a href="#" class="industry-text hover:text-white transition-colors duration-300 text-xs px-3 py-2 bg-white bg-opacity-5 rounded">
-        Construction
-      </a>
-      <a href="#" class="industry-text hover:text-white transition-colors duration-300 text-xs px-3 py-2 bg-white bg-opacity-5 rounded">
-        Defense
-      </a>
-    </nav>
-  </div>
-
-  <!-- Main Content -->
-  <div class="flex flex-col military-grid md:ml-64">
-
-    <!-- Hero Section - Boat and Title -->
-    <div class="h-screen flex flex-col items-center justify-center px-4 md:px-8">
-      <!-- ASCII Animation -->
-      <div class="relative z-10 flex items-center justify-center opacity-70" style="flex: 1.2;">
-        <pre id="ascii-canvas" class="ascii-canvas"></pre>
-      </div>
-
-      <!-- Admiral Labs Title -->
-      <div class="relative z-10 text-center flex items-center justify-center" style="flex: 0.8; margin-top: -4cm;">
-        <h1 class="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight glow-text">
-          Admiral Labs
-        </h1>
-      </div>
-
-      <!-- Scroll indicator -->
-      <div class="text-center pb-6">
-        <svg class="w-6 h-6 md:w-8 md:h-8 text-white opacity-40 animate-bounce mx-auto" fill="none" stroke="currentColor"
-          viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-        </svg>
-      </div>
-    </div>
-
-    <!-- Capabilities Grid -->
-    <div class="relative z-10 max-w-6xl mx-auto py-12 md:py-16 w-full px-4 md:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-        <div class="text-center flex items-center justify-center">
-          <h3 class="text-2xl md:text-3xl lg:text-4xl font-light">See Clearly</h3>
-        </div>
-        <div class="text-center flex items-center justify-center">
-          <h3 class="text-2xl md:text-3xl lg:text-4xl font-light">Drive Top-Line Growth</h3>
-        </div>
-        <div class="text-center flex items-center justify-center">
-          <h3 class="text-2xl md:text-3xl lg:text-4xl font-light">Automate with Confidence</h3>
-        </div>
-        <div class="text-center flex items-center justify-center">
-          <h3 class="text-2xl md:text-3xl lg:text-4xl font-light">Expand Capacity, not Headcount</h3>
-        </div>
-      </div>
-    </div>
-
-    <!-- Location and Contact -->
-    <div class="relative z-10 flex flex-col items-center gap-3 md:gap-4 text-center mt-8 md:mt-12 mb-8 md:mb-12 px-4">
-      <div class="flex justify-center gap-4 md:gap-8 mono-caps text-xs md:text-sm" style="color: #999999;">
-        <span>San Francisco</span>
-        <span>—</span>
-        <span>London</span>
-      </div>
-      <a href="mailto:contact@admirallabs.com" class="text-xs md:text-sm hover:text-white transition-colors duration-300"
-        style="color: #999999; font-family: 'JetBrains Mono', ui-monospace, 'Courier New', monospace;">
-        contact@admirallabs.com
-      </a>
-    </div>
-
+  <div class="container">
+    <pre id="ascii-canvas" class="ascii-canvas"></pre>
   </div>
 
   <script>
-    // Ensure page starts at top
-    window.addEventListener('beforeunload', () => {
-      window.scrollTo(0, 0);
-    });
-
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
-    }
-    window.scrollTo(0, 0);
-
     let animationFrames = [];
     let rockingFrames = [];
     let currentFrame = 0;
     let animationInterval = null;
-    let currentAnimationMode = 'arrival-rocking';
     let isInArrivalPhase = true;
     let arrivalFrames = [];
 
-    // Load animation data based on mode
-    function loadAnimation(mode) {
-      if (mode === 'arrival-rocking') {
-        // Load both animations for chaining
-        Promise.all([
-          fetch('animation_arrival_trimmed.json').then(r => r.json()),
-          fetch('animation_rocking_trimmed.json').then(r => r.json())
-        ])
-          .then(([arrivalData, rockingData]) => {
-            arrivalFrames = arrivalData.frames;
-            rockingFrames = rockingData.frames;
-            animationFrames = arrivalFrames;
-            currentFrame = 0;
-            isInArrivalPhase = true;
-            if (!animationInterval) {
-              startAnimation();
-            }
-          })
-          .catch(error => {
-            console.error('Error loading animations:', error);
-            document.getElementById('ascii-canvas').textContent = 'Animation loading...';
-          });
-      } else {
-        const filename = mode === 'rocking' ? 'animation_rocking_trimmed.json' : 'animation_arrival_trimmed.json';
-
-        fetch(filename)
-          .then(response => response.json())
-          .then(data => {
-            animationFrames = data.frames;
-            currentFrame = 0;
-            isInArrivalPhase = false;
-            if (!animationInterval) {
-              startAnimation();
-            }
-          })
-          .catch(error => {
-            console.error('Error loading animation:', error);
-            document.getElementById('ascii-canvas').textContent = 'Animation loading...';
-          });
-      }
+    function loadAnimation() {
+      Promise.all([
+        fetch('animation_arrival_trimmed.json').then(r => r.json()),
+        fetch('animation_rocking_trimmed.json').then(r => r.json())
+      ])
+        .then(([arrivalData, rockingData]) => {
+          arrivalFrames = arrivalData.frames;
+          rockingFrames = rockingData.frames;
+          animationFrames = arrivalFrames;
+          currentFrame = 0;
+          isInArrivalPhase = true;
+          startAnimation();
+        })
+        .catch(error => {
+          console.error('Error loading animations:', error);
+          document.getElementById('ascii-canvas').textContent = 'Animation loading...';
+        });
     }
 
-    // Load initial animation
-    loadAnimation(currentAnimationMode);
+    loadAnimation();
 
     function startAnimation() {
       if (animationFrames.length === 0) return;
 
       const canvas = document.getElementById('ascii-canvas');
-      const container = document.getElementById('ascii-container');
 
-      // Set initial frame and scale
       canvas.textContent = animationFrames[0];
       scaleToFit();
 
-      // Start animation loop
       animationInterval = setInterval(() => {
         canvas.textContent = animationFrames[currentFrame];
-        currentFrame = (currentFrame + 1);
+        currentFrame++;
 
-        // Handle chaining for arrival-rocking mode
-        if (currentAnimationMode === 'arrival-rocking' && isInArrivalPhase) {
-          // Check if arrival animation finished
+        if (isInArrivalPhase) {
           if (currentFrame >= arrivalFrames.length) {
-            // Switch to rocking animation
             animationFrames = rockingFrames;
             currentFrame = 0;
             isInArrivalPhase = false;
           }
         } else {
-          // Normal looping for other modes
           currentFrame = currentFrame % animationFrames.length;
         }
-      }, 1000 / 12); // 12 FPS
+      }, 1000 / 12);
 
-      // Rescale on window resize
       window.addEventListener('resize', scaleToFit);
     }
 
     function scaleToFit() {
       const canvas = document.getElementById('ascii-canvas');
-      const isMobile = window.innerWidth < 768;
 
-      // Reset scale to measure natural size
+      canvas.style.transform = 'none';
       canvas.style.fontSize = '10px';
 
       const contentWidth = canvas.scrollWidth;
       const contentHeight = canvas.scrollHeight;
 
-      // Calculate scale based on available width
-      let availableWidth;
-      if (isMobile) {
-        availableWidth = window.innerWidth - 32; // minus mobile padding
-      } else {
-        availableWidth = window.innerWidth - 256 - 64; // minus sidebar and padding
-      }
+      const availableWidth = window.innerWidth * 0.9;
+      const availableHeight = window.innerHeight * 0.9;
 
-      const widthMultiplier = isMobile ? 0.9 : 0.6;
-      const scaleX = availableWidth / contentWidth * widthMultiplier;
-      let scale = Math.min(scaleX, 2); // Max 2x scale
+      const scaleX = availableWidth / contentWidth;
+      const scaleY = availableHeight / contentHeight;
 
-      // Ensure minimum readable scale
-      const minScale = isMobile ? 0.3 : 0.5;
-      scale = Math.max(scale, minScale);
+      const scale = Math.min(scaleX, scaleY, 2);
 
       canvas.style.transform = `scale(${scale})`;
     }
   </script>
-
 </body>
 
 </html>
